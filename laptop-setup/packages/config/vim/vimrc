@@ -1,0 +1,71 @@
+set nocompatible
+filetype off
+set rtp+=~/.vim/bundle/vundle/
+call vundle#begin()
+" let Vundle manage Vundle, required
+Plugin 'gmarik/Vundle.vim'
+
+" Add all your plugins here 
+Plugin 'Shougo/vimproc.vim'
+Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'scrooloose/nerdtree'
+Plugin 'sjl/badwolf'
+Plugin 'godlygeek/tabular'
+Plugin 'majutsushi/tagbar'
+Plugin 'fatih/vim-go'
+Plugin 'tfnico/vim-gradle'
+Plugin 'vim-syntastic/syntastic'
+Plugin 'benmills/vimux'
+Plugin 'Shougo/neocomplete.vim'
+Plugin 'ervandew/supertab'
+
+
+" Scala 
+Plugin 'ensime/ensime-vim'
+Plugin 'derekwyatt/vim-scala'
+
+" General
+Plugin 'jceb/vim-orgmode'
+Plugin 'tpope/vim-speeddating'
+Plugin 'vim-scripts/VimClojure'
+Plugin 'tpope/vim-fireplace'
+Plugin 'vim-airline/vim-airline'
+
+
+" All of your Plugins must be added before the following line
+call vundle#end()          
+filetype plugin indent on 
+" Vundle is now finished
+
+colorscheme badwolf 
+syntax on
+
+set number
+set nowrap
+set showmode
+set tw=120
+set smartcase
+set smarttab
+set smartindent
+set autoindent
+set softtabstop=2
+set shiftwidth=2
+set expandtab
+set incsearch
+set hlsearch
+set mouse=a
+set history=1000
+set clipboard=unnamedplus,autoselect
+set completeopt=menuone,menu,longest
+set wildignore+=*\\tmp\\*,*.swp,*.swo,*.zip,.git,.cabal-sandbox
+set wildmode=longest,list,full
+set wildmenu
+set cmdheight=1
+set laststatus=2
+set completeopt=menuone,menu,longest
+
+" Folding
+set foldmethod=indent
+set foldlevel=99
+
