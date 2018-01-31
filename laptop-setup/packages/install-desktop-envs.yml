@@ -1,0 +1,13 @@
+---
+- hosts: local
+  
+  tasks:
+  - name: Aptitude - Install Cinnamon Desktop
+    become: true
+    apt:
+      name: cinnamon
+
+  - name: Aptitude - Install Budgie Desktop
+    become: true
+    apt:
+      name: budgie-desktop

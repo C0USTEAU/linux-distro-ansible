@@ -1,0 +1,19 @@
+---
+- hosts: local
+
+  tasks: 
+  - name: Aptitude - Install tmux
+    become: true
+    apt:
+      name: tmux
+  
+  - name: Setup tmux - Check .tmux.conf exists
+    stat: path=~/.tmux.conf
+    register: tmuxfilecheck
+
+  - name: Setup tmux - Move .tmux.conf to backup
+    command: mv ~/.tmux.conf ~/.tmux.conf.{{ ansible_date_time.date }}-{{ ansible_date_time.time }}
+    when: tmuxfilecheck.stat.exists
+
+  - name: Setup tmux - Copy tmux.conf file from Ansible dir to HOME
+    command: cp config/tmux/tmux.conf ~/.tmux.conf

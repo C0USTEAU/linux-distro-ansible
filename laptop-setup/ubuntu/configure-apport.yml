@@ -1,0 +1,18 @@
+---
+- hosts: local
+
+  tasks: 
+  
+  - name: Check default apport config file exists
+    become: true
+    stat: path=/etc/default/apport
+    register: filecheck
+
+  - name: Move apport config file to backup
+    become: true
+    command: mv /etc/default/apport /etc/default/apport{{ ansible_date_time.date }}-{{ ansible_date_time.time }}
+    when: filecheck.stat.exists
+
+  - name: Copy apport file with flag disabled
+    become: true
+    command: cp config/apport /etc/default/apport

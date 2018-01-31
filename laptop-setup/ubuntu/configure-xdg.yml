@@ -1,0 +1,104 @@
+---
+- hosts: local
+
+  tasks: 
+  
+  - name: Check if user-dirs.dirs config files exist
+    stat: path=~/.config/user-dirs.dirs
+    register: uddfilecheck
+
+  - name: Backup user-dirs.dirs config files if it exists
+    command: mv ~/.config/user-dirs.dirs  ~/.config/user-dirs.dirs.{{ ansible_date_time.date }}-{{ ansible_date_time.time }}
+    when: uddfilecheck.stat.exists
+
+  - name: Copy user-dirs.dirs file from ansible to HOME
+    command: cp config/user-dirs.dirs ~/.config/user-dirs.dirs
+
+  - name: Check if user-dirs.locale config files exist
+    stat: path=~/.config/user-dirs.locale
+    register: udlfilecheck
+
+  - name: Backup user.dirs.locale config files if it exists
+    command: mv ~/.config/user-dirs.locale  ~/.config/user-dirs.locale.{{ ansible_date_time.date }}-{{ ansible_date_time.time }}
+    when: udlfilecheck.stat.exists
+
+  - name: Copy user-dirs.locale file from ansible to HOME
+    command: cp config/user-dirs.locale ~/.config/user-dirs.locale
+
+  - name: Delete standard xdg dirs
+    file:
+      path: "{{ ansible_env.HOME }}/Desktop"
+      state: absent
+
+  - name: Delete standard xdg dirs
+    file:
+      path: "{{ ansible_env.HOME }}/Download"
+      state: absent
+
+  - name: Delete standard xdg dirs
+    file:
+      path: "{{ ansible_env.HOME }}/Templates"
+      state: absent
+
+  - name: Delete standard xdg dirs
+    file:
+      path: "{{ ansible_env.HOME }}/Public"
+      state: absent
+
+  - name: Delete standard xdg dirs
+    file:
+      path: "{{ ansible_env.HOME }}/Documents"
+      state: absent
+
+  - name: Delete standard xdg dirs
+    file:
+      path: "{{ ansible_env.HOME }}/Music"
+      state: absent
+
+  - name: Delete standard xdg dirs
+    file:
+      path: "{{ ansible_env.HOME }}/Pictures"
+      state: absent
+
+  - name: Delete standard xdg dirs
+    file:
+      path: "{{ ansible_env.HOME }}/Videos"
+      state: absent
+
+  - name: Create personalised xdg dirs
+    file:
+      path: "{{ ansible_env.HOME }}/desktop"
+      state: directory
+
+  - name: Create personalised xdg dirs
+    file:
+      path: "{{ ansible_env.HOME }}/downloads"
+      state: directory
+
+  - name: Create personalised xdg dirs
+    file:
+      path: "{{ ansible_env.HOME }}/docs/templates"
+      state: directory
+
+  - name: Create personalised xdg dirs
+    file:
+      path: "{{ ansible_env.HOME }}/docs/public"
+      state: directory
+
+  - name: Create personalised xdg dirs
+    file:
+      path: "{{ ansible_env.HOME }}/media/music"
+      state: directory
+
+  - name: Create personalised xdg dirs
+    file:
+      path: "{{ ansible_env.HOME }}/media/pictures"
+      state: directory
+
+  - name: Create personalised xdg dirs
+    file:
+      path: "{{ ansible_env.HOME }}/media/videos"
+      state: directory
+
+  - name: Run xdg-user-dirs-update
+    command: xdg-user-dirs-update 

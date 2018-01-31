@@ -1,0 +1,9 @@
+---
+- hosts: local
+
+  tasks:
+  - name: Aptitude - Install git
+    become: true
+    apt:
+      name: git
+

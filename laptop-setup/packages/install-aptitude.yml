@@ -1,0 +1,14 @@
+---
+- hosts: local
+
+  tasks: 
+  - name: Aptitude - Install Aptitude
+    become: true
+    apt:
+      name: aptitude 
+
+  - name: Aptitude - Update all packages to the latest version
+    become: true
+    apt:
+      update_cache: yes
+      upgrade: yes
