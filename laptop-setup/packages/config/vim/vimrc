@@ -49,9 +49,10 @@ set smartcase
 set smarttab
 set smartindent
 set autoindent
-set softtabstop=2
+set softtabstop=0
 set shiftwidth=2
-set expandtab
+set tabstop=2
+set noexpandtab
 set incsearch
 set hlsearch
 set mouse=a
@@ -64,6 +65,9 @@ set wildmenu
 set cmdheight=1
 set laststatus=2
 set completeopt=menuone,menu,longest
+set pastetoggle=<F2>
+set splitright
+set splitbelow
 
 " Folding
 set foldmethod=indent

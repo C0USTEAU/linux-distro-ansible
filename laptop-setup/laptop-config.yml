@@ -1,7 +1,6 @@
 ---
 - import_playbook: bash/configure-bash.yml
-- import_playbook: ubuntu/configure-apport.yml
-- import_playbook: ubuntu/configure-xdg.yml
+
 - import_playbook: general/configure-keymap.yml
 
 - import_playbook: packages/install-aptitude.yml
@@ -12,3 +11,9 @@
 - import_playbook: packages/install-tmux.yml
 - import_playbook: packages/install-tree.yml
 - import_playbook: packages/install-vim.yml
+- import_playbook: packages/install-vundle.yml
+
+- import_playbook: software/install-xmind.yml
+
+- import_playbook: ubuntu/configure-apport.yml
+- import_playbook: ubuntu/configure-xdg.yml

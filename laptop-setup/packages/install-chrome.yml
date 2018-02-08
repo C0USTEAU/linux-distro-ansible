@@ -13,7 +13,6 @@
     ignore_errors: True
 
   - name: Aptitude - Add Google Chrome key
-    become: true
     uri: 
       url: https://dl-ssl.google.com/linux/linux_signing_key.pub
       return_content: yes
