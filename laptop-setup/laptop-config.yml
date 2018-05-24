@@ -17,3 +17,4 @@
 
 - import_playbook: ubuntu/configure-apport.yml
 - import_playbook: ubuntu/configure-xdg.yml
+- import_playbook: ubuntu/disable-blueman.yml
