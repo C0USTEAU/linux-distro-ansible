@@ -1,0 +1,8 @@
+---
+- hosts: local
+
+  tasks:
+  - name: Aptitude - Install gimp
+    become: true
+    apt:
+      name: gimp

@@ -1,0 +1,8 @@
+---
+- hosts: local
+
+  tasks:
+  - name: Aptitude - Install Java
+    become: true
+    apt:
+      name: openjdk-9-jdk

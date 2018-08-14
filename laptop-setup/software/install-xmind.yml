@@ -2,6 +2,7 @@
 - hosts: local
 
   tasks:
+  
   - name: Download xmind zip
     get_url:
       url: https://www.xmind.net/xmind/downloads/xmind-8-update7-linux.zip
