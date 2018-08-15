@@ -22,7 +22,7 @@ Plugin 'ervandew/supertab'
 
 
 " Scala 
-Plugin 'ensime/ensime-vim'
+" Plugin 'ensime/ensime-vim'
 Plugin 'derekwyatt/vim-scala'
 
 " General

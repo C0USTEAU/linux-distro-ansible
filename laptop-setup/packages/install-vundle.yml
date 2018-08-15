@@ -6,17 +6,20 @@
     stat: path=~/.vimrc
     register: vimrcfilecheck
 
-  - name: Setup vundle - Check .vim exists
-    stat: path=~/.vim
-    register: vimfilecheck
-
   - name: Setup vundle - Move .vimrc to backup
     command: mv ~/.vimrc ~/.vimrc.{{ ansible_date_time.date }}-{{ ansible_date_time.time }}
     when: vimrcfilecheck.stat.exists
 
+  - name: Setup vundle - Copy vimrc from Ansible dir to HOME
+    command: cp config/vim/vimrc ~/.vimrc
+
+  - name: Setup vundle - Check .vim/bundle/vundle exists
+    stat: path=~/.vim/bundle/vundle
+    register: vundlefilecheck
+
   - name: Setup vundle - Move .vim to backup
     command: mv ~/.vim ~/.vim.{{ ansible_date_time.date }}-{{ ansible_date_time.time }}
-    when: vimfilecheck.stat.exists
+    when: vundlefilecheck.stat.exists == False
 
   - name: Setup vundle - Clone the vundle repo
     git:
@@ -24,6 +27,4 @@
       dest: ~/.vim/bundle/vundle
       clone: yes
       update: yes
-
-  - name: Setup vundle - Copy vimrc from Ansible dir to HOME
-    command: cp config/vim/vimrc ~/.vimrc
+    when: vundlefilecheck.stat.exists == False

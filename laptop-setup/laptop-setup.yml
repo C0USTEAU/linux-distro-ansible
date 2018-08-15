@@ -13,7 +13,7 @@
 - import_playbook: packages/install-vim.yml
 - import_playbook: packages/install-vundle.yml
 
-- import_playbook: software/install-xmind.yml
+  #- import_playbook: software/install-xmind.yml
 
 - import_playbook: ubuntu/configure-apport.yml
 - import_playbook: ubuntu/configure-xdg.yml
