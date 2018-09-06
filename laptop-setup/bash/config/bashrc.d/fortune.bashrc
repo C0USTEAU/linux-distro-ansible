@@ -1,3 +1,3 @@
 
-fortune -o
+fortune | cowsay
 

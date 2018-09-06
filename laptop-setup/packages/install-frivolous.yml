@@ -12,6 +12,26 @@
     apt:
       name: fortune
 
+  - name: Aptitude - Install fortunes-anarchism
+    become: true
+    apt:
+      name: fortune
+
+  - name: Aptitude - Install fortunes-bofh-excuses
+    become: true
+    apt:
+      name: fortunes-bofh-excuses
+
+  - name: Aptitude - Install fortunes-off
+    become: true
+    apt:
+      name: fortunes-off
+
+  - name: Aptitude - Install fortunes-spam
+    become: true
+    apt:
+      name: fortunes-spam
+
   - name: Aptitude - Install toilet
     become: true
     apt:
