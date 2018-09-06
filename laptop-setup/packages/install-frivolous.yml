@@ -1,0 +1,28 @@
+---
+- hosts: local
+
+  tasks:
+  - name: Aptitude - Install sl
+    become: true
+    apt:
+      name: sl
+
+  - name: Aptitude - Install fortune
+    become: true
+    apt:
+      name: fortune
+
+  - name: Aptitude - Install toilet
+    become: true
+    apt:
+      name: toilet
+
+  - name: Aptitude - Install cmatrix
+    become: true
+    apt:
+      name: cmatrix
+
+  - name: Aptitude - Install cowsay
+    become: true
+    apt:
+      name: cowsay
