@@ -12,6 +12,15 @@
 - import_playbook: packages/install-tree.yml
 - import_playbook: packages/install-vim.yml
 - import_playbook: packages/install-vundle.yml
+- import_playbook: packages/install-java.yml
+- import_playbook: packages/install-tops.yml
+- import_playbook: packages/install-vagrant.yml
+- import_playbook: packages/install-frivolous.yml
+- import_playbook: packages/install-gimp.yml
+- import_playbook: packages/install-snapcraft.yml
+- import_playbook: packages/install-jq.yml
+
+- import_playbook: snaps/install-intellij.yml
 
   #- import_playbook: software/install-xmind.yml
 
