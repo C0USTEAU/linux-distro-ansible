@@ -1,8 +1,0 @@
----
-- hosts: local
-
-  tasks:
-  - name: Aptitude - Install jq
-    become: true
-    apt:
-      name: jq

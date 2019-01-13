@@ -1,0 +1,10 @@
+---
+- debug:
+    msg: "{{ item }}"
+  with_items: "{{ packages }}"
+
+- debug:
+    msg: "{{ inventory_hostname }}"
+
+- debug:
+    msg: "{{ role_path }}"

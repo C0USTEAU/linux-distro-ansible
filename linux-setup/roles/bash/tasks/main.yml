@@ -1,0 +1,19 @@
+---
+- name: Setup bashrc - Check .bashrc exists
+  stat: path=~/.bashrc
+  register: filecheck
+
+- name: Setup bashrc - Move .bashrc to backup
+  command: mv ~/.bashrc ~/.bashrc.{{ ansible_date_time.date }}-{{ ansible_date_time.time }}
+  when: filecheck.stat.exists
+
+- name: Setup bashrc - Move bashrc file from Ansible dir to HOME
+  command: cp "{{ role_path }}/files/bashrc" ~/.bashrc
+
+- name: Setup bashrc - Make bashrc.d directory
+  file: path=~/.bashrc.d state=directory
+
+- name: Setup bashrc - Copy standard bash tweaks to bashrc.d directory
+  copy: 
+    src: "{{ role_path }}/files/bashrc.d/"
+    dest: ~/.bashrc.d/

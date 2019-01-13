@@ -1,0 +1,3 @@
+- name: Snap - Install Intellij
+  become: true
+  command: snap install intellij-idea-community --classic --edge

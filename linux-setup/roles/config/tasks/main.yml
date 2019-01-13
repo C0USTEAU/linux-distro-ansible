@@ -1,0 +1,52 @@
+---
+# Configure tmux
+- name: Setup tmux - Check .tmux.conf exists
+  stat: path=~/.tmux.conf
+  register: tmuxfilecheck
+
+- name: Setup tmux - Move .tmux.conf to backup
+  command: mv ~/.tmux.conf ~/.tmux.conf.{{ ansible_date_time.date }}-{{ ansible_date_time.time }}
+  when: tmuxfilecheck.stat.exists
+
+- name: Setup tmux - Copy tmux.conf file from Ansible dir to HOME
+  command: cp "{{ role_path }}/files/tmux/tmux.conf" ~/.tmux.conf
+
+# Configure terminator
+- name: Setup terminator - Check terminator config exists
+  stat: path=~/.config/terminator/config
+  register: terminatorfilecheck
+
+- name: Setup terminator - Move terminator config to backup
+  command: mv ~/.config/terminator/config  ~/.config/terminator/config.{{ ansible_date_time.date }}-{{ ansible_date_time.time }}
+  when: terminatorfilecheck.stat.exists
+
+- name: Setup terminator - Copy terminator config file from Ansible dir to HOME
+  command: cp "{{ role_path }}/files/terminator/config" ~/.config/terminator/config
+
+# Configure vim+vundle
+- name: Setup vundle - Check .vimrc exists
+  stat: path=~/.vimrc
+  register: vimrcfilecheck
+
+- name: Setup vundle - Move .vimrc to backup
+  command: mv ~/.vimrc ~/.vimrc.{{ ansible_date_time.date }}-{{ ansible_date_time.time }}
+  when: vimrcfilecheck.stat.exists
+
+- name: Setup vundle - Copy vimrc from Ansible dir to HOME
+  command: cp "{{ role_path }}/files/vim/vimrc" ~/.vimrc
+
+- name: Setup vundle - Check .vim/bundle/vundle exists
+  stat: path=~/.vim/bundle/vundle
+  register: vundlefilecheck
+
+- name: Setup vundle - Move .vim to backup
+  command: mv ~/.vim ~/.vim.{{ ansible_date_time.date }}-{{ ansible_date_time.time }}
+  when: vundlefilecheck.stat.exists == False
+
+- name: Setup vundle - Clone the vundle repo
+  git:
+    repo: "https://github.com/gmarik/vundle.git"
+    dest: ~/.vim/bundle/vundle
+    clone: yes
+    update: yes
+  when: vundlefilecheck.stat.exists == False

@@ -1,0 +1,11 @@
+---
+- name: Install Chrome
+  include: chrome.yml
+
+- name: Apt - Install update-manager-core
+  become: true
+  apt:
+    name: update-manager-core
+
+- name: Copy Intellij desktop file to .local
+  command: cp /var/lib/snapd/desktop/applications/intellij-idea-community_intellij-idea-community.desktop ~/.local/share/applications

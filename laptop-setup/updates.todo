@@ -1,9 +1,0 @@
-Broken
-----
-Fix xmind install
-
-On Full Re-Run
-----
-1. Stop demolishing vim setup 
-2. Check software isn't installed before re-installing it [ e.g. xmind ]
-3. Add checks to prevent any other ramdon unnecessary steps if expensive or pointless

@@ -1,0 +1,27 @@
+packages:
+- aptitude 
+- cinnamon
+- cmatrix
+- cowsay
+- fortune
+- fortune-anarchism
+- fortunes-bofh-excuses
+- fortunes-off
+- fortunes-spam
+- gimp
+- git
+- gnubg
+- htop
+- iftop
+- jq
+- openjdk-11-jdk
+- sl
+- snapcraft
+- steam
+- terminator
+- tmux
+- toilet
+- tree
+- vagrant
+- vim
+- virtualbox

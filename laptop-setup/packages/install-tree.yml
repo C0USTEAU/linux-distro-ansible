@@ -1,9 +1,0 @@
----
-- hosts: local
-
-  tasks:
-  - name: Aptitude - Install tree
-    become: true
-    apt:
-      name: tree
-
