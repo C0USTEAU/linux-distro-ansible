@@ -38,5 +38,5 @@
 
   - name: Aptitude - Install Google Chrome
     become: true
-    apt: pkg=google-chrome-stable state=installed
+    apt: pkg=google-chrome-stable state=present
   # Install Chrome End

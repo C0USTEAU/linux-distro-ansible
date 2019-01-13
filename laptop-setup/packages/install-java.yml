@@ -5,4 +5,4 @@
   - name: Aptitude - Install Java
     become: true
     apt:
-      name: openjdk-9-jdk
+      name: openjdk-11-jdk

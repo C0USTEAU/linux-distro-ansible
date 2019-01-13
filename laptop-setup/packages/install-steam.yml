@@ -1,0 +1,8 @@
+---
+- hosts: local
+
+  tasks:
+  - name: Aptitude - Install Steam
+    become: true
+    apt:
+      name: steam
