@@ -16,9 +16,7 @@
 [plugins]
 [profiles]
   [[default]]
-    background_color = "#ffffff"
     copy_on_selection = True
     cursor_color = "#aaaaaa"
     font = Monospace 9
-    foreground_color = "#000000"
     use_system_font = False
