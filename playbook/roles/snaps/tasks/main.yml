@@ -1,3 +1,14 @@
+- name: Make sure snap service is running
+  become: true
+  systemd:
+    state: started
+    name: snapd
+
 - name: Snap - Install Intellij
   become: true
   command: snap install intellij-idea-community --classic --edge
+
+- name: Copy Intellij desktop file to .local
+  #Ubnuntu Gnome version, copying to ~/Desktop might also work, need to test
+  #command: cp /var/lib/snapd/desktop/applications/intellij-idea-community_intellij-idea-community.desktop ~/.local/share/applications
+  command: cp /var/lib/snapd/desktop/applications/intellij-idea-community_intellij-idea-community.desktop ~/Desktop/

@@ -1,0 +1,20 @@
+- name: Setup terminator - Check terminator config file exists
+  stat: path=~/.config/terminator/config
+  register: terminatorfilecheck
+
+- name: Setup terminator - Move terminator config to backup
+  command: mv ~/.config/terminator/config  ~/.config/terminator/config.{{ ansible_date_time.date }}-{{ ansible_date_time.time }}
+  when: terminatorfilecheck.stat.exists
+  
+- name: Setup terminator - Check terminator config directory exists
+  stat: path=~/.config/terminator
+  register: terminatordircheck
+
+- name: Setup terminator - Create directory if it doesn't exist
+  file:
+    path: ~/.config/terminator
+    state: directory
+  when: terminatordircheck.stat.exists == False
+
+- name: Setup terminator - Copy terminator config file from Ansible dir to HOME
+  command: cp "{{ role_path }}/files/terminator/config" ~/.config/terminator/config

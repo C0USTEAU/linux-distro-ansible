@@ -1,0 +1,9 @@
+apt_packages:
+- fortune
+- fortune-anarchism
+- fortunes-bofh-excuses
+- fortunes-off
+- fortunes-spam
+- openjdk-11-jdk
+- snapcraft
+- toilet

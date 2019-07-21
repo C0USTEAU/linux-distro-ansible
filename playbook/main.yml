@@ -1,13 +1,12 @@
 ---
 - hosts: local
   connection: local
-  #become: yes
-  #become_method: sudo
 
   roles:
-    - aptitude
+    #- apt
+    #- ubuntu
+    - pacman
     - bash
     - common
-    - snaps
     - config
-    - ubuntu
+    - snaps
