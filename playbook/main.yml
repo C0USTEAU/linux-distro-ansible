@@ -6,6 +6,7 @@
     #- apt
     #- ubuntu
     - pacman
+    - arch
     - bash
     - common
     - config
