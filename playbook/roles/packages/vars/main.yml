@@ -7,3 +7,9 @@ apt_packages:
 - openjdk-11-jdk
 - snapcraft
 - toilet
+
+pacman_packages:
+- fortune-mod
+- jdk-openjdk
+- snapd
+- banner

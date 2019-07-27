@@ -9,3 +9,8 @@
 - debug:
     msg: "{{ role_path }}"
 
+- debug:
+    msg: "{{ ansible_distribution }}"
+
+- debug:
+    msg: "{{ ansible_os_family }}"
