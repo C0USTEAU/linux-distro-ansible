@@ -1,13 +1,35 @@
 ---
-- hosts: local
-  connection: local
+ - name: talk to all hosts just so we can learn about them
+   hosts: all
+   tasks:
+     - name: Classify hosts depending on their OS distribution
+       group_by:
+         key: os_{{ ansible_facts['os_family'] }}
 
-  roles:
-    #- apt
-    #- ubuntu
-    - pacman
-    - arch
+   roles:
     - bash
     - common
     - config
     - snaps
+
+ - hosts: os_Archlinux
+   connection: local
+   gather_facts: False
+   tasks:
+     - name: Test running stuff on Arch only
+       debug: 
+         msg: "I'm on Arch"
+   
+   roles:
+    - arch
+
+ - hosts: os_Debian
+   connection: local
+   gather_facts: False
+   tasks:
+     - name: Test running stuff on Arch only
+       debug: 
+         msg: "I'm on Debian"
+   
+   roles:
+    - ubuntu

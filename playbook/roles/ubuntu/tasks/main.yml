@@ -1,6 +1,9 @@
 ---
-- name: Install Chrome
-  include: chrome.yml
+- name: Install Debian Only Packages
+  include: debian.yml
 
 - name: Install Ubuntu Only Packages
-  include: packages.yml
+  include: ubuntu.yml
+
+- name: Install Chrome
+  include: chrome.yml

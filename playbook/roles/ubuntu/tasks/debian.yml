@@ -1,0 +1,16 @@
+---
+- name: Apt - Upgrade all packages to the latest version
+  become: true
+  apt:
+    update_cache: yes
+    upgrade: yes
+
+- name: Apt - Install common apt and pacman packages
+  become: true
+  apt:
+    name: "{{ packages }}"
+
+- name: Apt - Install apt-only packages
+  become: true
+  apt:
+    name: "{{ apt_packages }}"

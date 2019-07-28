@@ -17,3 +17,19 @@ packages:
 - vagrant
 - vim
 - virtualbox
+
+apt_packages:
+- fortune
+- fortune-anarchism
+- fortunes-bofh-excuses
+- fortunes-off
+- fortunes-spam
+- openjdk-11-jdk
+- snapcraft
+- toilet
+
+pacman_packages:
+- fortune-mod
+- jdk-openjdk
+- snapd
+- banner
