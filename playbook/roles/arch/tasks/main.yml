@@ -1,6 +1,3 @@
 ---
 - name: Install Arch Packages
-  include: arch.yml
-
-- name: Install Chrome
-  include: chrome.yml
+  include: dropbox.yml

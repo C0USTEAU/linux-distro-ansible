@@ -5,14 +5,13 @@
 #pacman:
 #update_cache: yes
 #upgrade: yes
+
 - name: Pacman - Install packages common to apt and pacman
   become: true
   pacman:
     name: "{{ packages }}"
-  when: ansible_os_family == 'Archlinux'
 
 - name: Pacman - Install pacman-only packages
   become: true
   pacman:
     name: "{{ pacman_packages }}"
-  when: ansible_os_family == 'Archlinux'

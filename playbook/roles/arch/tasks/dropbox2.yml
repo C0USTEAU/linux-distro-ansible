@@ -1,0 +1,39 @@
+#- name: Setup Dropbox - Check if Dropbox already installed
+#become: true
+#shell: pacman -Q | grep -i google-chrome
+#register: chrome_installed
+#ignore_errors: True
+
+- name: Setup Dropbox - Install dropbox dependencies
+  become: true
+  pacman:
+    name: gendesk
+
+- block:
+  - name: Setup Dropbox - Download dropbox gpg key
+    shell: curl https://linux.dropbox.com/fedora/rpm-public-key.asc -o /tmp/dropbox.txt
+
+  - name: Setup Dropbox - Download dropbox gpg key
+    shell: gpg --import /tmp/dropbox.txt
+
+  - name: Setup Dropbox - Build the AUR package
+    command: makepkg -s
+    args:
+      chdir: /tmp/dropbox/
+    
+  - name: Setup Dropbox - Get the name of the dropbox AUR package
+    find:
+      paths: /tmp/dropbox/
+      patterns: "*.xz"
+    register: files_matched
+
+  - name: Setup Dropbox - Do the Pacman package installation
+    become: true
+    command: pacman -U --noconfirm "{{ item.path }}" 
+    with_items: "{{ files_matched.files }}"
+
+  - name: Setup Dropbox - Remove the dropbox download directory
+    file:
+      path: /tmp/dropbox/
+      state: absent
+      #when: chrome_installed.stdout == "" 
