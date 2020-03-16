@@ -1,18 +1,13 @@
 ---
- - name: talk to all hosts just so we can learn about them
+ - name: Figure out if we're on Arch or Debian based distro
    hosts: all
    tasks:
      - name: Classify hosts depending on their OS distribution
        group_by:
          key: os_{{ ansible_facts['os_family'] }}
 
-   roles:
-    - bash
-    - common
-    - config
-    - snaps
-
- - hosts: os_Archlinux
+ - name: Install Arch packages
+   hosts: os_Archlinux
    connection: local
    gather_facts: False
    tasks:
@@ -23,7 +18,8 @@
    roles:
     - arch
 
- - hosts: os_Debian
+ - name: Install Debian packages
+   hosts: os_Debian
    connection: local
    gather_facts: False
    tasks:
@@ -33,3 +29,11 @@
    
    roles:
     - ubuntu
+
+ - name: Do common distro stuff
+   hosts: all
+   roles:
+    - bash
+    - common
+    - config
+      #- snaps

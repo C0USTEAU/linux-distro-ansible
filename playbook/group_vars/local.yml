@@ -31,5 +31,5 @@ apt_packages:
 pacman_packages:
 - fortune-mod
 - jdk-openjdk
-- snapd
+#- snapd
 - banner

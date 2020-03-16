@@ -1,0 +1,15 @@
+- name: Setup vundle - Check .vim/bundle/vundle exists
+  stat: path=~/.vim/bundle/vundle
+  register: vundlefilecheck
+
+- name: Setup vundle - Move .vim to backup
+  command: mv ~/.vim ~/.vim.{{ ansible_date_time.date }}-{{ ansible_date_time.time }}
+  when: vundlefilecheck.stat.exists == False
+
+- name: Setup vundle - Clone the vundle repo
+  git:
+    repo: "https://github.com/gmarik/vundle.git"
+    dest: ~/.vim/bundle/vundle
+    clone: yes
+    update: yes
+  when: vundlefilecheck.stat.exists == False
