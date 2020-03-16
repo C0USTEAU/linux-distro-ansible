@@ -7,3 +7,6 @@
 
 - name: Install Chrome
   include: chrome.yml
+
+- name: Install Chrome
+  include: dropbox.yml
