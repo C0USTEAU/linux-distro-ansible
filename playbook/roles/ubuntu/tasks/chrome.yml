@@ -31,3 +31,6 @@
     become: true
     apt: pkg=google-chrome-stable state=present
   when: google_apt_exists.rc == 1
+
+- name: Setup Chrome - Make chrome default browser
+  shell: xdg-settings set default-web-browser google-chrome.desktop 

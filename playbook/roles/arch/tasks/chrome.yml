@@ -32,3 +32,6 @@
       path: /tmp/google-chrome/
       state: absent
   when: chrome_installed.stdout == "" 
+
+- name: Setup Chrome - Make chrome default browser
+  shell: xdg-settings set default-web-browser google-chrome.desktop 
