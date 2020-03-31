@@ -1,6 +1,5 @@
 packages:
 - ansible
-- cinnamon
 - cmatrix
 - cowsay
 - gimp
@@ -17,6 +16,10 @@ packages:
 - vagrant
 - vim
 - virtualbox
+- wine
+- wavemon
+- connman
+- jupyterlab
 
 apt_packages:
 - fortune
@@ -33,4 +36,3 @@ pacman_packages:
 - jdk-openjdk
 #- snapd
 - banner
-- jupyterlab

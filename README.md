@@ -10,3 +10,10 @@ Currently covers Arch and Ubuntu based distros
 * Fix warnings
 * Add some more packages, iftop alternatives etc......
 
+
+#### ArchBased
+* Script dwm install
+* Script ICAClient install
+* Script joplin install
+* Script connman install
+* Investigate using yay to keep aur gits up-to-date
