@@ -5,7 +5,7 @@ syntax on
 set number
 set nowrap
 set showmode
-set tw=120
+set tw=0
 set smartcase
 set smarttab
 set smartindent
