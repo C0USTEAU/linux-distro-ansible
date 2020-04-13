@@ -9,11 +9,15 @@ Currently covers Arch and Ubuntu based distros
 	* Remove all but Ubuntu specific items from Ubuntu role
 * Fix warnings
 * Add some more packages, iftop alternatives etc......
+* Remove cinammon
 
 
 #### ArchBased
 * Script dwm install
 * Script ICAClient install
-* Script joplin install
-* Script connman install
+* Script joplin install (aur)
+* Script connman install (aur maybe?)
+* Script todo.txt install (aur) + pathogen and vim todo.txt-vim + cp .todo.cfg into ~/
 * Investigate using yay to keep aur gits up-to-date
+* Make AUR stuff like snap independent of Manjaro repos
+* Add blueman to Arch packages and start/enable the bluetooth service (systemctl enable --now bluetooth )

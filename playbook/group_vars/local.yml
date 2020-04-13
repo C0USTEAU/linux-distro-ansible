@@ -20,6 +20,7 @@ packages:
 - wavemon
 - connman
 - jupyterlab
+- xorg-xbacklight
 
 apt_packages:
 - fortune
