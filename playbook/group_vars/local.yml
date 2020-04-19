@@ -16,11 +16,15 @@ packages:
 - vagrant
 - vim
 - virtualbox
-- wine
 - wavemon
 - connman
 - jupyterlab
 - xorg-xbacklight
+- qpdfview
+- dvd+rw-tools
+- inxi
+- dstat
+- sysstat
 
 apt_packages:
 - fortune
@@ -35,5 +39,4 @@ apt_packages:
 pacman_packages:
 - fortune-mod
 - jdk-openjdk
-#- snapd
 - banner
