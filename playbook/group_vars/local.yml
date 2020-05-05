@@ -25,6 +25,7 @@ packages:
 - inxi
 - dstat
 - sysstat
+- acpi
 
 apt_packages:
 - fortune
