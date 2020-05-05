@@ -10,6 +10,7 @@ Currently covers Arch and Ubuntu based distros
 * Fix warnings
 * Add some more packages, iftop alternatives etc......
 * Remove cinammon
+* Maybe bin debian/ubuntu elements. Unlikely I'll be leaving Arch-based distros. Lot of overhead keeping both up to date
 
 
 #### ArchBased
