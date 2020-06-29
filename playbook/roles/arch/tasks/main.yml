@@ -7,3 +7,6 @@
 
 - name: Install Dropbox
   include: dropbox.yml
+
+- name: Install Zoom
+  include: zoom.yml

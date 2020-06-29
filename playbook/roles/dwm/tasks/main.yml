@@ -1,0 +1,9 @@
+---
+- name: Install dwm
+  include: st.yml
+
+- name: Install dwm
+  include: dwm.yml
+
+- name: Install dwmblocks
+  include: dwmblocks.yml

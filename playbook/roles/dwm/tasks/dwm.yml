@@ -1,0 +1,51 @@
+- name: Setup dwm - Check if dwm already installed
+  become: true
+  shell: pacman -Q | grep "^dwm "
+  register: dwm_installed
+  ignore_errors: True 
+
+- block:
+  - name: Setup dwm - Clone the Arch dwm package repo
+    git:
+      repo: "https://aur.archlinux.org/dwm.git"
+      dest: /tmp/dwm
+      clone: yes
+
+  - name: Setup dwm - Build the AUR package
+    command: makepkg -s
+    args:
+      chdir: /tmp/dwm/
+      
+  - name: Setup dwm - Get the name of the dwm AUR package
+    find:
+      paths: /tmp/dwm/
+      patterns: "*.xz"
+    register: files_matched
+
+  - name: Setup dwm - Do the Pacman package installation
+    become: true
+    command: pacman -U --noconfirm "{{ item.path }}" 
+    with_items: "{{ files_matched.files }}"
+
+  - name: Setup dwm - Remove the dwm download directory
+    file:
+      path: /tmp/dwm/
+      state: absent
+  when: dwm_installed.stdout == "" 
+
+- name: Setup dwm - Checkout the custome branch
+  git:
+    repo: "https://github.com/C0USTEAU/dwm"
+    dest: /tmp/dwm
+    version: 6.2-fe-custom
+
+- name: Setup dwm - make install the source
+  become: true
+  command: make install
+  args:
+    chdir: /tmp/dwm/
+
+- name: Setup dwm - Remove the dwm download directory
+  file:
+    path: /tmp/dwm/
+    state: absent

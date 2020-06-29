@@ -1,4 +1,0 @@
----
-- name: General config - Remap caps-lock to ctrl
-  command: setxkbmap -layout gb -option ctrl:nocapssetxkbmap -option ctrl:nocaps
-

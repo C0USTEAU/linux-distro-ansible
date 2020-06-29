@@ -1,18 +1,10 @@
----
-- debug:
-    msg: "{{ item }}"
-  with_items: "{{ packages }}"
+- name: Setup dwm - Clone the Arch dwm package repo
+  git:
+    repo: "https://github.com/C0USTEAU/dwm"
+    dest: /tmp/dwm
+    version: 6.2-fe-custom
 
-- debug:
-    msg: "{{ inventory_hostname }}"
-
-- debug:
-    msg: "{{ role_path }}"
-
-- debug:
-    msg: "{{ ansible_distribution }}"
-
-- debug:
-    msg: "{{ ansible_os_family }}"
-
-- debug: var=ansible_facts
+- name: Setup dwm - Build the AUR package
+  command: make 
+  args:
+    chdir: /tmp/dwm/

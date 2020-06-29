@@ -1,5 +1,0 @@
-- name: Setup Dropbox - Downlad and unpack Dropbox installer
-  unarchive:
-    src: "https://www.dropbox.com/download?plat=lnx.x86_64"
-    dest: ~/
-    remote_src: yes

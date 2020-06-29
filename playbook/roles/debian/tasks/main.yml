@@ -2,11 +2,5 @@
 - name: Install Debian Only Packages
   include: debian.yml
 
-- name: Install Ubuntu Only Packages
-  include: ubuntu.yml
-
 - name: Install Chrome
   include: chrome.yml
-
-- name: Install Chrome
-  include: dropbox.yml

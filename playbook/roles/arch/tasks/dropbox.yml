@@ -4,12 +4,12 @@
   register: dropbox_installed
   ignore_errors: True 
 
-- name: Setup Dropbox - Install dropbox dependencies
-  become: true
-  pacman:
-    name: gendesk
-
 - block:
+  - name: Setup Dropbox - Install dropbox dependencies
+    become: true
+    pacman:
+      name: gendesk
+
   - name: Setup Dropbox - Clone the Arch Dropbox package repo
     git:
       repo: "https://aur.archlinux.org/dropbox.git"

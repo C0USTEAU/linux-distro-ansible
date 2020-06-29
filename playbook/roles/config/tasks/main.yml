@@ -1,16 +1,8 @@
 ---
-# Configure git
-- name: Configure git
-  include: git.yml
-
-# Configure tmux
-- name: Configure tmux
-  include: tmux.yml
-
 # Configure terminator
 - name: Configure terminator
   include: terminator.yml
 
-# Configure vim+vundle
+# Configure vim
 - name: Configure vim
   include: vim.yml

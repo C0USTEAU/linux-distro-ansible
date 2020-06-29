@@ -1,0 +1,3 @@
+---
+- name: Install joplin
+  include: joplin.yml

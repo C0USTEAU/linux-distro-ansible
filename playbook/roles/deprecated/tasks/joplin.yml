@@ -1,0 +1,34 @@
+- name: Setup joplin - Check if joplin already installed
+  become: true
+  shell: pacman -Q | grep "joplin"
+  register: joplin_installed
+  ignore_errors: True 
+
+- block:
+  - name: Setup joplin - Clone the Arch joplin package repo
+    git:
+      repo: "https://aur.archlinux.org/joplin.git"
+      dest: /tmp/joplin
+      clone: yes
+
+  - name: Setup joplin - Build the AUR package
+    command: makepkg -f -s
+    args:
+      chdir: /tmp/joplin/
+      
+  - name: Setup joplin - Get the name of the joplin AUR package
+    find:
+      paths: /tmp/joplin/
+      patterns: "*.xz"
+    register: files_matched
+
+  - name: Setup joplin - Do the Pacman package installation
+    become: true
+    command: pacman -U --noconfirm "{{ item.path }}" 
+    with_items: "{{ files_matched.files }}"
+
+  - name: Setup joplin - Remove the joplin download directory
+    file:
+      path: /tmp/joplin/
+      state: absent
+  when: joplin_installed.stdout == "" 

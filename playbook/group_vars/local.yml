@@ -13,19 +13,28 @@ packages:
 - terminator
 - tmux
 - tree
-- vagrant
 - vim
+- vagrant
 - virtualbox
 - wavemon
 - connman
 - jupyterlab
 - xorg-xbacklight
-- qpdfview
 - dvd+rw-tools
 - inxi
+- mesa-demos
 - dstat
 - sysstat
 - acpi
+- gdb
+- calibre
+- speedtest-cli
+- hsetroot
+- picom
+- noto-fonts-emoji
+- bat
+- ranger
+
 
 apt_packages:
 - fortune
@@ -41,3 +50,4 @@ pacman_packages:
 - fortune-mod
 - jdk-openjdk
 - banner
+

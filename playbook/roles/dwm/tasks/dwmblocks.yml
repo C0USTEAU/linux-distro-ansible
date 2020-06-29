@@ -1,0 +1,16 @@
+- name: Setup dwmblocks - Checkout the custome branch
+  git:
+    repo: "https://github.com/C0USTEAU/dwmblocks"
+    dest: /tmp/dwmblocks
+    version: fe-custom
+
+- name: Setup dwmblocks - make install the source
+  become: true
+  command: make
+  args:
+    chdir: /tmp/dwmblocks/
+
+- name: Setup dwmblocks - Remove the dwmblocks download directory
+  file:
+    path: /tmp/dwmblocks/
+    state: absent

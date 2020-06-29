@@ -16,7 +16,12 @@
 [plugins]
 [profiles]
   [[default]]
+    background_darkness = 0.65
+    background_type = transparent
     copy_on_selection = True
     cursor_color = "#aaaaaa"
     font = Monospace 9
     use_system_font = False
+    scrollbar_position = hidden
+    scrollback_lines = 5000
+    show_titlebar = False
