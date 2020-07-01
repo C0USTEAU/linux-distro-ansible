@@ -1,34 +1,39 @@
-- name: Setup st - Check if st already installed
+- name: Install st - Check if st already installed
   become: true
   shell: pacman -Q | grep "^st "
   register: st_installed
   ignore_errors: True 
 
 - block:
-  - name: Setup st - Clone the Arch st package repo
+  - name: Install st - Install packages required in makepkg step
+    become: true
+    pacman:
+      name: "libxft"
+
+  - name: Install st - Clone the Arch st package repo
     git:
       repo: "https://aur.archlinux.org/st.git"
-      dest: /tmp/st
+      dest: ~/tmp/st
       clone: yes
 
-  - name: Setup st - Build the AUR package
+  - name: Install st - Build the AUR package
     command: makepkg -s
     args:
-      chdir: /tmp/st/
+      chdir: ~/tmp/st/
       
-  - name: Setup st - Get the name of the st AUR package
+  - name: Install st - Get the name of the st AUR package
     find:
-      paths: /tmp/st/
+      paths: ~/tmp/st/
       patterns: "*.xz"
     register: files_matched
 
-  - name: Setup st - Do the Pacman package installation
+  - name: Install st - Do the Pacman package installation
     become: true
     command: pacman -U --noconfirm "{{ item.path }}" 
     with_items: "{{ files_matched.files }}"
 
-  - name: Setup st - Remove the st download directory
+  - name: Install st - Remove the st download directory
     file:
-      path: /tmp/st/
+      path: ~/tmp/st/
       state: absent
   when: st_installed.stdout == "" 

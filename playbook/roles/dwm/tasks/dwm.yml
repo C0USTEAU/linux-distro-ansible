@@ -49,3 +49,4 @@
   file:
     path: /tmp/dwm/
     state: absent
+

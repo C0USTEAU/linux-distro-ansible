@@ -1,37 +1,44 @@
-- name: Setup Chrome - Check if Chrome already installed
+- name: Install Chrome - Check if Chrome already installed
   become: true
   shell: pacman -Q | grep -i google-chrome
   register: chrome_installed
   ignore_errors: True
 
 - block:
-  - name: Setup Chrome - Clone the Arch chrome package repo
+  # The makepkg step below fails without this dependency
+  - name: Install Chrome - Install packages required in makepkg step
+    become: true
+    pacman:
+      name: "libxss"
+
+  - name: Install Chrome - Clone the Arch chrome package repo
     git:
       repo: "https://aur.archlinux.org/google-chrome.git"
-      dest: /tmp/google-chrome
+      dest: ~/tmp/google-chrome
       clone: yes
 
-  - name: Setup Chrome - Build the AUR package
+  - name: Install Chrome - Build the AUR package
     command: makepkg -s
     args:
-      chdir: /tmp/google-chrome
+      chdir: ~/tmp/google-chrome
     
-  - name: Setup Chrome - Get the name of the google-chrome AUR package
+  - name: Install Chrome - Get the name of the google-chrome AUR package
     find:
-      paths: /tmp/google-chrome
+      paths: ~/tmp/google-chrome
       patterns: "*.xz"
     register: files_matched
 
-  - name: Setup Chrome - Do the Pacman package installation
+  - name: Install Chrome - Do the Pacman package installation
     become: true
     command: pacman -U --noconfirm "{{ item.path }}" 
     with_items: "{{ files_matched.files }}"
 
-  - name: Setup Chrome - Remove the google-chrome download directory
+  - name: Install Chrome - Remove the google-chrome download directory
     file:
-      path: /tmp/google-chrome/
+      path: ~/tmp/google-chrome/
       state: absent
+
+  - name: Install Chrome - Make chrome default browser
+    shell: xdg-settings set default-web-browser google-chrome.desktop 
   when: chrome_installed.stdout == "" 
 
-- name: Setup Chrome - Make chrome default browser
-  shell: xdg-settings set default-web-browser google-chrome.desktop 

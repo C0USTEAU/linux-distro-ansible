@@ -1,6 +1,6 @@
 ---
 - name: Install Arch Packages
-  include: arch.yml
+  include: packages.yml
 
 - name: Install Chrome
   include: chrome.yml

@@ -1,0 +1,8 @@
+---
+- name: Copy dotfiles to home directory
+  command: cp -r {{ role_path }}/files/{{ item }} ~/
+  with_items:
+   - ".bashrc"
+   - ".bashrc.d"
+   - ".config"
+   - ".vimrc"

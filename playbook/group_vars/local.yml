@@ -9,31 +9,36 @@ packages:
 - iftop
 - jq
 - sl
-- steam
 - terminator
 - tmux
 - tree
 - vim
 - vagrant
 - virtualbox
-- wavemon
 - connman
 - jupyterlab
 - xorg-xbacklight
 - dvd+rw-tools
-- inxi
-- mesa-demos
-- dstat
-- sysstat
 - acpi
 - gdb
-- calibre
 - speedtest-cli
 - hsetroot
 - picom
+- noto-fonts
 - noto-fonts-emoji
 - bat
 - ranger
+- findutils
+- fakeroot
+- man
+- pkgconf
+- dmenu
+#- steam
+#- wavemon
+#- inxi
+#- mesa-demos
+#- dstat
+#- sysstat
 
 
 apt_packages:
@@ -42,12 +47,17 @@ apt_packages:
 - fortunes-bofh-excuses
 - fortunes-off
 - fortunes-spam
-- openjdk-11-jdk
-- snapcraft
 - toilet
+#- openjdk-11-jdk
+#- snapcraft
 
 pacman_packages:
 - fortune-mod
-- jdk-openjdk
 - banner
+#- jdk-openjdk
+
+vbox_packages:
+- virtualbox-guest-dkms
+- virtualbox-guest-utils
+- virtualbox-guest-x11
 

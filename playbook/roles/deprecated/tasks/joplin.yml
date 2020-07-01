@@ -12,7 +12,7 @@
       clone: yes
 
   - name: Setup joplin - Build the AUR package
-    command: makepkg -f -s
+    command: makepkg -fs
     args:
       chdir: /tmp/joplin/
       
