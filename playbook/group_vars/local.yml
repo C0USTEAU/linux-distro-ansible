@@ -33,31 +33,12 @@ packages:
 - man
 - pkgconf
 - dmenu
+- fortune-mod
+- banner
 #- steam
 #- wavemon
 #- inxi
 #- mesa-demos
 #- dstat
 #- sysstat
-
-
-apt_packages:
-- fortune
-- fortune-anarchism
-- fortunes-bofh-excuses
-- fortunes-off
-- fortunes-spam
-- toilet
-#- openjdk-11-jdk
-#- snapcraft
-
-pacman_packages:
-- fortune-mod
-- banner
-#- jdk-openjdk
-
-vbox_packages:
-- virtualbox-guest-dkms
-- virtualbox-guest-utils
-- virtualbox-guest-x11
 
