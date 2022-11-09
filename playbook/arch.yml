@@ -3,4 +3,6 @@
   connection: local
 
   roles:
-    - arch
+    - packages
+    - dotfiles
+    - dwm 

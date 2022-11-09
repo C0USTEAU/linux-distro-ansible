@@ -1,4 +1,0 @@
-- name: Apt - Install update-manager-core
-  become: true
-  apt:
-    name: update-manager-core

@@ -1,9 +1,0 @@
-- name: Make sure snap service is running
-  become: true
-  systemd:
-    state: started
-    name: snapd
-
-- name: Snap - Install Intellij
-  become: true
-  command: snap install intellij-idea-community --classic --edge

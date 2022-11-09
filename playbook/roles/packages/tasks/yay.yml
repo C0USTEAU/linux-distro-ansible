@@ -23,6 +23,19 @@
     update_cache: yes
     upgrade: yes
 
-- name: Yay - Install yay-packages listed in group_vars/local.yml
+- name: Yay - Install google-chrome
   become: true
-  yay: name=google-chrome state=latest
+  yay: name=google-chrome state=present
+
+- name: Yay - Install dropbox
+  become: true
+  yay: name=dropbox state=present
+
+- name: Yay - Install zoom
+  become: true
+  yay: name=zoom state=present
+
+- name: Yay - Install mictray
+  become: true
+  yay: name=mictray state=present
+

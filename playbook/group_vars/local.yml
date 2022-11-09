@@ -1,4 +1,5 @@
 packages:
+- yay
 - ansible
 - cmatrix
 - cowsay
@@ -10,17 +11,17 @@ packages:
 - jq
 - sl
 - terminator
-- tmux
+#- tmux
 - tree
 - vim
-- vagrant
-- virtualbox
-- connman
+#- vagrant
+#- virtualbox
+#- connman
 - jupyterlab
 - xorg-xbacklight
-- dvd+rw-tools
+#- dvd+rw-tools
 - acpi
-- gdb
+#- gdb
 - speedtest-cli
 - hsetroot
 - picom
@@ -35,10 +36,24 @@ packages:
 - dmenu
 - fortune-mod
 - banner
+- pasystray
+#- jdk-openjdk
 #- steam
 #- wavemon
 #- inxi
 #- mesa-demos
 #- dstat
-#- sysstat
+- sysstat
+- dunst
+
+yay-packages:
+- google-chrome
+- dropbox
+- zoom
+- mictray
+
+vbox_packages:
+- virtualbox-guest-dkms
+- virtualbox-guest-utils
+- virtualbox-guest-x11
 

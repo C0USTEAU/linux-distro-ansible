@@ -1,4 +1,4 @@
-- name: Install dwmblocks - Checkout the custome branch
+- name: Install dwmblocks - Checkout the custom branch
   git:
     repo: "https://github.com/C0USTEAU/dwmblocks"
     dest: /tmp/dwmblocks
@@ -10,7 +10,7 @@
   args:
     chdir: /tmp/dwmblocks/
 
-- name: Install dwmblocks - Deploy status scripts
+- name: Install dwmblocks - Deploy dwmblocks scripts
   become: true
   copy:
     src: "{{ item }}"

@@ -1,17 +1,23 @@
 ### Ansible Playbook For Configuring Linux Distros
 ---
-Currently covers Arch and Ubuntu based distros
 
 #### TODO:
-* Split Ubuntu in Debian and Ubuntu roles
-	* Duplicate Ubuntu role to Debian role
-	* Delete Ubuntu specific items from Debian role
-	* Remove all but Ubuntu specific items from Ubuntu role
 * Fix warnings
 * Add some more packages, iftop alternatives etc......
-* Remove cinammon
-* Maybe bin debian/ubuntu elements. Unlikely I'll be leaving Arch-based distros. Lot of overhead keeping both up to date
 * Figure out how to use tags instead of detecting os and to seletively install some items like citrix client etc......
+* Make Nocows somehow part of build
+* Yay instead of makepkg
+* Add steps to get ansible yay module ready for use in bootstrap
+* Re-org roles - pacman, yay instead of arch. Put all yay stuff together but add tags to include/exclude
+* Top level arch playbook can include all these roles and tags can indicate which yay stuff to do
+* dotfiles can be included in top level arch playbook also
+* Add autostart file to ansible
+* Remember how I did the background image
+* Setup dwmblocks
+* Fuck, all the shite with Pacman reminders. Unit files and other shite. Not in git. Wanker
+* mictray
+* wifi thingy
+
 
 
 #### ArchBased

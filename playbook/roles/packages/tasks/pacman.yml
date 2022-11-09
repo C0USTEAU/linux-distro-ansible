@@ -5,12 +5,7 @@
     update_cache: yes
     upgrade: yes
 
-- name: Pacman - Install packages common to apt and pacman
+- name: Pacman - Install packages listed in group_vars/local.yml
   become: true
   pacman:
     name: "{{ packages }}"
-
-- name: Pacman - Install pacman-only packages
-  become: true
-  pacman:
-    name: "{{ pacman_packages }}"
