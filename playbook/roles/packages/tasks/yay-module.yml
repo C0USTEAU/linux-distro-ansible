@@ -1,0 +1,19 @@
+- name: Create Ansible modules dir if it doesn't exist
+  become: true
+  file:
+    path: /usr/share/ansible/plugins/modules
+    state: directory
+    mode: '0755'
+
+- name: Clone ansible-yay module to tmp dir
+  git:
+    repo: "https://github.com/mnussbaum/ansible-yay.git"
+    dest: /tmp/ansible-yay
+    clone: yes
+
+- name: Copy ansible-yay module to Ansible modules directory
+  become: true
+  copy:
+    src: /tmp/ansible-yay/yay
+    dest: /usr/share/ansible/plugins/modules
+
