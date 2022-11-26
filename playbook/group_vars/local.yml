@@ -46,7 +46,7 @@ packages:
 - sysstat
 - dunst
 
-yay-packages:
+yay_packages:
 - google-chrome
 - dropbox
 - zoom

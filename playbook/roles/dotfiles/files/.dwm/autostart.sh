@@ -1,0 +1,4 @@
+dwmblocks &
+dropbox &
+mictray &
+

@@ -1,22 +1,12 @@
+---
 - name: Yay - Upgrade all packages to the latest version
   become: true
   yay:
     update_cache: yes
     upgrade: yes
 
-- name: Yay - Install google-chrome
+- name: Yay - Install packages listed in group_vars/local.yml
   become: true
-  yay: name=google-chrome state=present
-
-- name: Yay - Install dropbox
-  become: true
-  yay: name=dropbox state=present
-
-- name: Yay - Install zoom
-  become: true
-  yay: name=zoom state=present
-
-- name: Yay - Install mictray
-  become: true
-  yay: name=mictray state=present
-
+  yay:
+    name: "{{ yay_packages }}"
+    state: latest
