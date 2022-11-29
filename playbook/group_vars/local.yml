@@ -45,12 +45,20 @@ packages:
 #- dstat
 - sysstat
 - dunst
+- atop
+- glances
+- nmon
+- lsof
+- gtop
+- bashtop
+
 
 yay-packages:
 - google-chrome
 - dropbox
 - zoom
 - mictray
+- vtop
 
 vbox_packages:
 - virtualbox-guest-dkms
