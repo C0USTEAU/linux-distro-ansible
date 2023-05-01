@@ -1,5 +1,4 @@
 packages:
-- yay
 - ansible
 - cmatrix
 - cowsay
@@ -51,6 +50,9 @@ packages:
 - lsof
 - gtop
 - bashtop
+- lightdm
+- lightdm-gtk-greeter
+- wireless_tools
 
 
 yay_packages:

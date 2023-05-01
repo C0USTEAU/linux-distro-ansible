@@ -2,8 +2,5 @@
 - name: Install Arch Packages
   include_tasks: pacman.yml
 
-- name: Install Yay Module
-  include_tasks: yay-module.yml
-
 - name: Install Yay Packages
   include_tasks: yay.yml
