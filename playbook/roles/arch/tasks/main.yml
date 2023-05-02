@@ -1,0 +1,14 @@
+---
+- name: Enable NetworkManager service
+  become: true
+  ansible.builtin.systemd:
+    name: NetworkManager
+    enabled: true
+    masked: false
+
+- name: Enable LightDM service
+  become: true
+  ansible.builtin.systemd:
+    name: lightdm
+    enabled: true
+    masked: false
