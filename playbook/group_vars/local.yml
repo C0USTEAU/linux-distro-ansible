@@ -20,7 +20,7 @@ packages:
 - xorg-xbacklight
 #- dvd+rw-tools
 - acpi
-#- gdb
+- gdb
 - speedtest-cli
 - hsetroot
 - picom
@@ -53,6 +53,7 @@ packages:
 - lightdm
 - lightdm-gtk-greeter
 - wireless_tools
+- xorg-xrandr
 
 
 yay_packages:
@@ -61,6 +62,8 @@ yay_packages:
 - zoom
 - mictray
 - vtop
+- lux
+- checkupdates-with-aur
 
 vbox_packages:
 - virtualbox-guest-dkms
