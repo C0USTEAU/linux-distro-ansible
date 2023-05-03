@@ -12,3 +12,8 @@
     name: lightdm
     enabled: true
     masked: false
+
+- name: Initial run of lux required
+  become: true
+  ansible.builtin.shell: lux
+

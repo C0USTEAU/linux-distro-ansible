@@ -1,7 +1,6 @@
 packages:
 - acpi
 - ansible
-- atop
 - banner
 - bashtop
 - bat
@@ -17,7 +16,6 @@ packages:
 - git
 - glances
 - gnubg
-- gtop
 - hsetroot
 - htop
 - iftop
@@ -62,10 +60,10 @@ not-installed:
 
 yay_packages:
 - google-chrome
+- gotop
 - dropbox
 - zoom
 - mictray
-- vtop
 - lux
 - checkupdates-with-aur
 
