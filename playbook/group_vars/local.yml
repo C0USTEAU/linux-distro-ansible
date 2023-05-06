@@ -9,6 +9,7 @@ packages:
 - dmenu
 - dunst
 - fakeroot
+- feh
 - findutils
 - fortune-mod
 - gdb
@@ -25,6 +26,7 @@ packages:
 - lightdm-gtk-greeter
 - lsof
 - man
+- neofetch
 - network-manager-applet 
 - nmon
 - noto-fonts
@@ -39,6 +41,9 @@ packages:
 - sysstat
 - terminator
 - tree
+- ttf-iosevka-nerd
+- ttf-jetbrains-mono-nerd
+- ttf-joypixels 
 - vim
 - wireless_tools
 - xorg-xbacklight
@@ -59,13 +64,14 @@ not-installed:
 
 
 yay_packages:
+- checkupdates-with-aur
+- dropbox
+- fastfetch
 - google-chrome
 - gotop
-- dropbox
-- zoom
-- mictray
 - lux
-- checkupdates-with-aur
+- mictray
+- zoom
 
 vbox_packages:
 - virtualbox-guest-dkms
