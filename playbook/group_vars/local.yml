@@ -26,7 +26,9 @@ packages:
 - lightdm-gtk-greeter
 - lsof
 - man
+- mupdf
 - neofetch
+- netstat
 - network-manager-applet 
 - nmon
 - noto-fonts
@@ -38,13 +40,16 @@ packages:
 - ranger
 - sl
 - speedtest-cli
+- strace
 - sysstat
+- tcpdump
 - terminator
 - tree
 - ttf-iosevka-nerd
 - ttf-jetbrains-mono-nerd
 - ttf-joypixels 
 - vim
+- visidata
 - wireless_tools
 - xorg-xbacklight
 - xorg-xrandr
