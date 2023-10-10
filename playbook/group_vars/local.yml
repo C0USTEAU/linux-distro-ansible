@@ -19,12 +19,14 @@ packages:
 - gnubg
 - hsetroot
 - htop
+- httrack
 - iftop
 - jq
 - jupyterlab
 - lightdm
 - lightdm-gtk-greeter
 - lsof
+- lynx
 - man
 - mupdf
 - neofetch
@@ -36,6 +38,7 @@ packages:
 - pavucontrol
 - picom
 - pkgconf
+- python-virtualenv
 - ranger
 - sl
 - speedtest-cli
