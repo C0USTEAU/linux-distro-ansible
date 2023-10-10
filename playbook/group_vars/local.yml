@@ -28,7 +28,6 @@ packages:
 - man
 - mupdf
 - neofetch
-- netstat
 - network-manager-applet 
 - nmon
 - noto-fonts
@@ -55,6 +54,7 @@ packages:
 - xorg-xrandr
 
 not-installed:
+#- netstat
 #- connman
 #- dstat
 #- dvd+rw-tools
