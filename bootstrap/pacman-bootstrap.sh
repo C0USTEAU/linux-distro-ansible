@@ -20,4 +20,4 @@ sudo mkdir -p /usr/share/ansible/plugins/modules
 sudo cp /tmp/ansible-yay/yay /usr/share/ansible/plugins/modules/
 sudo rm -rf /tmp/ansible-yay
 
-pip install pyyaml
+sudo pacman -S python-pyaml
