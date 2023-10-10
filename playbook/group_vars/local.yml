@@ -43,6 +43,7 @@ packages:
 - sl
 - speedtest-cli
 - strace
+- stress
 - sysstat
 - tcpdump
 - terminator
@@ -69,6 +70,7 @@ not-installed:
 #- vagrant
 #- virtualbox
 #- wavemon
+#- gotop
 
 
 yay_packages:
@@ -76,7 +78,6 @@ yay_packages:
 - dropbox
 - fastfetch
 - google-chrome
-- gotop
 - lux
 - mictray
 - zoom
