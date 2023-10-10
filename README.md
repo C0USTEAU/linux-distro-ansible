@@ -3,4 +3,4 @@
 
 #### TODO:
 * Fix warnings
-* Remember how I did the background image
+* Get fricking 2FA working
