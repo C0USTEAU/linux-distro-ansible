@@ -1,8 +1,6 @@
 sudo pacman -S archlinux-keyring
 sudo pacman -Syyuu
-sudo pacman -S ansible 
-sudo pacman -S git
-sudo pacman -S python-pip
+sudo pacman -S ansible git python-pip
 ansible --version
 sudo cp hosts /etc/ansible/hosts
 
