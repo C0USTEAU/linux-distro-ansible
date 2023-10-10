@@ -1,9 +1,8 @@
 sudo pacman -S archlinux-keyring
 sudo pacman -Syyuu
-sudo pacman -S ansible 
-sudo pacman -S git
-sudo pacman -S python-pip
+sudo pacman -S ansible git python-pip
 ansible --version
+sudo mkdir /etc/ansible
 sudo cp hosts /etc/ansible/hosts
 
 cd /tmp
@@ -20,4 +19,4 @@ sudo mkdir -p /usr/share/ansible/plugins/modules
 sudo cp /tmp/ansible-yay/yay /usr/share/ansible/plugins/modules/
 sudo rm -rf /tmp/ansible-yay
 
-pip install pyyaml
+sudo pacman -S python-pyaml
