@@ -9,6 +9,7 @@ packages:
 - dmenu
 - dunst
 - fakeroot
+- fastfetch
 - feh
 - findutils
 - fortune-mod
@@ -19,7 +20,6 @@ packages:
 - gnubg
 - hsetroot
 - htop
-- httrack
 - iftop
 - jq
 - jupyterlab
@@ -39,6 +39,7 @@ packages:
 - pavucontrol
 - picom
 - pkgconf
+- python-flask
 - python-virtualenv
 - ranger
 - sl
@@ -74,15 +75,17 @@ not-installed:
 yay_packages:
 - checkupdates-with-aur
 - dropbox
-- fastfetch
 - google-chrome
 - gotop
 - lux
 - mictray
 - zoom
 
-vbox_packages:
-- virtualbox-guest-dkms
-- virtualbox-guest-utils
-- virtualbox-guest-x11
-
+packages_on_trial_yay_pac:
+- beaver-notes-bin (Not bad - Sync to dropbox - Wonder if there's an Android version) (Meh)
+- waveterm-bin  (Meh)
+- denaro (yay)
+- standardnotes
+- slock
+- jless
+- tiv
