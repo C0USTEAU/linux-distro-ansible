@@ -2,6 +2,7 @@ sudo pacman -S archlinux-keyring
 sudo pacman -Syyuu
 sudo pacman -S ansible git python-pip
 ansible --version
+sudo mkdir /etc/ansible
 sudo cp hosts /etc/ansible/hosts
 
 cd /tmp

@@ -30,7 +30,6 @@ packages:
 - man
 - mupdf
 - neofetch
-- netstat
 - network-manager-applet 
 - nmon
 - noto-fonts
@@ -45,6 +44,7 @@ packages:
 - sl
 - speedtest-cli
 - strace
+- stress
 - sysstat
 - tcpdump
 - terminator
@@ -59,6 +59,7 @@ packages:
 - xorg-xrandr
 
 not-installed:
+#- netstat
 #- connman
 #- dstat
 #- dvd+rw-tools
@@ -70,13 +71,13 @@ not-installed:
 #- vagrant
 #- virtualbox
 #- wavemon
+#- gotop
 
 
 yay_packages:
 - checkupdates-with-aur
 - dropbox
 - google-chrome
-- gotop
 - lux
 - mictray
 - zoom
