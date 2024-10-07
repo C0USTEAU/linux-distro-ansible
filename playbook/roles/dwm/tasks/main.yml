@@ -1,9 +1,9 @@
 ---
 - name: Install dwm
-  include: dwm.yml
+  import_tasks: dwm.yml
 
 - name: Copy dwm config files to ~/home/.dwm
-  include: config.yml
+  import_tasks: config.yml
 
 - name: Install dwmblocks
-  include: dwmblocks.yml
+  import_tasks: dwmblocks.yml

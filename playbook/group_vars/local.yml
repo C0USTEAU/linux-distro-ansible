@@ -17,10 +17,10 @@ packages:
 - gimp
 - git
 - glances
-- gnubg
 - hsetroot
 - htop
 - iftop
+- imagemagick 
 - jq
 - jupyterlab
 - lightdm
@@ -41,7 +41,9 @@ packages:
 - python-flask
 - python-virtualenv
 - ranger
+- rustup
 - sl
+- slock
 - speedtest-cli
 - strace
 - stress
@@ -87,6 +89,5 @@ packages_on_trial_yay_pac:
 - waveterm-bin  (Meh)
 - denaro (yay)
 - standardnotes
-- slock
 - jless
 - tiv
