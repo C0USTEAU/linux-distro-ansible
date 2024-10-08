@@ -19,3 +19,8 @@
   file:
     path: /tmp/dwm/
     state: absent
+
+- name: Initial run of lux required
+  become: true
+  ansible.builtin.shell: lux
+
