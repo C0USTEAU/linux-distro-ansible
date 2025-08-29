@@ -7,7 +7,7 @@
   git:
     repo: "https://github.com/C0USTEAU/dwm"
     dest: /tmp/dwm
-    version: 6.2-fe-custom
+    version: 6.4-fe-custom
 
 - name: Setup dwm - make install the source
   become: true
