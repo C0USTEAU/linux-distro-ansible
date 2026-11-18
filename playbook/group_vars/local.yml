@@ -1,12 +1,13 @@
 packages:
+- accountsservice
 - acpi
 - ansible
-- banner
-- bashtop
 - bat
+- btop
 - cmatrix
 - cowsay
 - dmenu
+- wmenu
 - dunst
 - fakeroot
 - fastfetch
@@ -16,20 +17,18 @@ packages:
 - gdb
 - gimp
 - git
-- glances
+- gvim
 - hsetroot
 - htop
 - iftop
 - imagemagick 
 - jq
-- jupyterlab
 - lightdm
 - lightdm-gtk-greeter
 - lsof
 - lynx
 - man
 - mupdf
-- neofetch
 - network-manager-applet 
 - nmon
 - noto-fonts
@@ -38,10 +37,7 @@ packages:
 - pavucontrol
 - picom
 - pkgconf
-- python-flask
-- python-virtualenv
 - ranger
-- rustup
 - sl
 - slock
 - speedtest-cli
@@ -50,11 +46,10 @@ packages:
 - sysstat
 - tcpdump
 - terminator
+- foot
 - tree
 - ttf-iosevka-nerd
 - ttf-jetbrains-mono-nerd
-- ttf-joypixels 
-- vim
 - visidata
 - wireless_tools
 - xorg-xbacklight
@@ -74,12 +69,17 @@ not-installed:
 #- virtualbox
 #- wavemon
 #- gotop
+#- banner
+#- bashtop
+#- glances
+#- neofetch
+#- ttf-joypixels 
 
 
 yay_packages:
+- google-chrome
 - checkupdates-with-aur
 - dropbox
-- google-chrome
 - lux
 - mictray
 - zoom

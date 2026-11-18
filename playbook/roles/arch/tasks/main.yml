@@ -1,15 +1,13 @@
 ---
-- name: Enable NetworkManager service
+- name: Enable Core System Services
   become: true
   ansible.builtin.systemd:
-    name: NetworkManager
+    name: "{{ item }}"
     enabled: true
     masked: false
-
-- name: Enable LightDM service
-  become: true
-  ansible.builtin.systemd:
-    name: lightdm
-    enabled: true
-    masked: false
-
+  loop:
+    - dbus-broker
+    - accounts-daemon
+    - NetworkManager
+    - bluetooth
+    - lightdm
