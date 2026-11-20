@@ -50,10 +50,12 @@ packages:
 - tree
 - ttf-iosevka-nerd
 - ttf-jetbrains-mono-nerd
+- unzip
 - visidata
 - wireless_tools
 - xorg-xbacklight
 - xorg-xrandr
+- zip
 
 not-installed:
 #- netstat
